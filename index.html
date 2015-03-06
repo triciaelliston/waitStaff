@@ -5,13 +5,14 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 	<script src="./myApp.js"></script>
 	<link rel="stylesheet" href="myApp.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<title>Waiter Earnings Calculator</title>
 </head>
 <body ng-controller="MyCtrl">
 	<header class="header">
 		<h1>Waitstaff Calculator</h1>
 	</header>
-	<section class="mealDetails box col-md-6">
+	<section class="mealDetails box col-xs-6 col-md-4">
 		<div class="alert alert-danger" role="alert" ng-if="mealForm.$submitted && mealForm.base_meal_price.$error.required || mealForm.tax_rate.$error.required || mealForm.tip_percentage.$error.required" ng-show='show_error'>Please enter numbers in all fields before submitting.</div>
 		<div class="alert alert-danger" role="alert" ng-if="mealForm.$submitted && mealForm.base_meal_price.$error.number || mealForm.tax_rate.$error.number || mealForm.tip_percentage.$error.number">Please enter numbers only.</div>
 		<form name="mealForm" ng-submit='submit()' novalidate>
@@ -28,7 +29,7 @@
               Tip Percentage: %
               <input type="number" name="tip_percentage" ng-model="tip_percentage" required><br><br>
             </label>
-            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" name="submit" class="btn btn-default">Submit</button>
             <button ng-click="cancel()" class="btn btn-default" type="button">Cancel</button>
 		</form>
 	</section>
